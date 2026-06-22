@@ -3,18 +3,276 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Datenschutzerklärung</title>
+  <title>Felix Rönnе – App Development</title>
+  <style>
+    :root {
+      --bg: #FAF6EE;
+      --card: #F0E9D8;
+      --card-hover: #EAE0C8;
+      --text: #2B2722;
+      --secondary: #7A7065;
+      --accent: #C9A36A;
+      --border: #E0D5C4;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* NAV */
+    nav {
+      padding: 24px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-brand {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
+
+    .nav-brand span {
+      color: var(--accent);
+    }
+
+    /* HERO */
+    .hero {
+      max-width: 720px;
+      margin: 80px auto 64px;
+      padding: 0 24px;
+      text-align: center;
+    }
+
+    .hero-eyebrow {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 700;
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--secondary);
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    /* APPS GRID */
+    .apps-section {
+      max-width: 720px;
+      margin: 0 auto 80px;
+      padding: 0 24px;
+      width: 100%;
+    }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--secondary);
+      margin-bottom: 20px;
+    }
+
+    .app-card {
+      background: var(--card);
+      border-radius: 20px;
+      padding: 32px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.18s ease, transform 0.18s ease;
+      margin-bottom: 12px;
+    }
+
+    .app-card:hover {
+      background: var(--card-hover);
+      transform: translateY(-2px);
+    }
+
+    .app-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      background: #2B2722;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .app-icon svg {
+      width: 36px;
+      height: 36px;
+    }
+
+    .app-info {
+      flex: 1;
+    }
+
+    .app-name {
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    .app-desc {
+      font-size: 14px;
+      color: var(--secondary);
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .app-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .app-link {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--accent);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .app-link:hover { text-decoration: underline; }
+
+    .app-link svg {
+      width: 12px;
+      height: 12px;
+      opacity: 0.7;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      background: var(--accent);
+      color: #fff;
+      padding: 2px 8px;
+      border-radius: 20px;
+    }
+
+    .tag.soon {
+      background: transparent;
+      color: var(--secondary);
+      border: 1px solid var(--border);
+    }
+
+    /* FOOTER */
+    footer {
+      margin-top: auto;
+      border-top: 1px solid var(--border);
+      padding: 28px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    footer p {
+      font-size: 13px;
+      color: var(--secondary);
+    }
+
+    footer a {
+      font-size: 13px;
+      color: var(--secondary);
+      text-decoration: none;
+    }
+
+    footer a:hover { color: var(--accent); }
+
+    @media (max-width: 540px) {
+      nav { padding: 20px; }
+      .hero { margin: 48px auto 40px; }
+      .app-card { flex-direction: column; align-items: flex-start; }
+      footer { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
 </head>
 <body>
-  <h1>Datenschutzerklärung</h1>
 
-  <p>Diese Website dient als Beispiel für eine Datenschutzerklärung.</p>
+  <nav>
+    <span class="nav-brand">Felix Rönnе <span>Apps</span></span>
+  </nav>
 
-  <h2>Kontakt</h2>
-  <p>E-Mail: example@email.com</p>
+  <main>
+    <div class="hero">
+      <p class="hero-eyebrow">Indie App Development</p>
+      <h1>Apps, die den Alltag ein bisschen besser machen.</h1>
+      <p>Kleine, fokussierte Apps für iOS — entwickelt mit Sorgfalt und ohne unnötigen Ballast.</p>
+    </div>
 
-  <h2>Datenverarbeitung</h2>
-  <p>Es werden keine personenbezogenen Daten gespeichert.</p>
+    <div class="apps-section">
+      <p class="section-label">Apps</p>
+
+      <div class="app-card">
+        <div class="app-icon">
+          <!-- Note icon -->
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="20" y="5" width="5" height="21" rx="2.5" fill="#F5EFE2"/>
+            <ellipse cx="14" cy="24" rx="8" ry="6.5" fill="#F5EFE2"/>
+            <circle cx="28" cy="8" r="4.5" fill="#C9A36A"/>
+          </svg>
+        </div>
+        <div class="app-info">
+          <p class="app-name">TakeNote</p>
+          <p class="app-desc">Aufnahmen für Klavierspieler — Takes aufnehmen, nach Abschnitten sortieren und den Fortschritt verfolgen.</p>
+          <div class="app-links">
+            <span class="tag">iOS</span>
+            <a class="app-link" href="takenote-privacy.html">
+              Datenschutzerklärung
+              <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 Felix Rönnе</p>
+    <a href="mailto:f.roenne@gmx.de">f.roenne@gmx.de</a>
+  </footer>
 
 </body>
 </html>
