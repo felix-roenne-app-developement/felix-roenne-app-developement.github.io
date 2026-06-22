@@ -200,68 +200,42 @@
 
     .app-link:hover { text-decoration: underline; }
 
-    /* DIVIDER */
-    .divider {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 0 40px;
-      border: none;
+    /* FOOTER */
+    footer {
       border-top: 1px solid var(--border);
-      width: 100%;
-    }
-
-    /* IMPRESSUM + FOOTER */
-    .footer-area {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 40px 40px 48px;
-      width: 100%;
-    }
-
-    .impressum-title {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--secondary);
-      margin-bottom: 12px;
-    }
-
-    .impressum-text {
-      font-size: 13px;
-      color: var(--secondary);
-      line-height: 1.7;
-    }
-
-    .impressum-text a {
-      color: var(--secondary);
-      text-decoration: none;
-    }
-
-    .impressum-text a:hover { color: var(--accent); }
-
-    .footer-bottom {
+      padding: 28px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 32px;
-      padding-top: 24px;
-      border-top: 1px solid var(--border);
+      gap: 12px;
     }
 
-    .footer-bottom p {
+    footer p {
       font-size: 13px;
       color: var(--secondary);
     }
+
+    footer nav {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    footer nav a {
+      font-size: 13px;
+      color: var(--secondary);
+      text-decoration: none;
+    }
+
+    footer nav a:hover { color: var(--accent); }
 
     @media (max-width: 600px) {
       nav { padding: 18px 20px; }
       .hero { padding: 48px 20px 40px; }
       .apps-section { padding: 0 20px 60px; }
       .divider { padding: 0 20px; }
-      .footer-area { padding: 32px 20px 40px; }
+      footer { padding: 24px 20px; }
       .app-card { grid-template-columns: 60px 1fr; gap: 16px; padding: 22px; }
       .app-icon { width: 60px; height: 60px; border-radius: 15px; }
     }
@@ -307,39 +281,14 @@
     </div>
   </div>
 
-  <hr class="divider">
-
-  <div class="footer-area" id="impressum">
-    <p class="impressum-title">Impressum</p>
-    <div class="impressum-text">
-      <p>
-        <strong>Angaben gemäß § 5 TMG</strong><br>
-        Felix Rönnе<br>
-        Gottschedstraße 3<br>
-        22301 Hamburg<br>
-        E-Mail: <a href="mailto:f.roenne@gmx.de">f.roenne@gmx.de</a>
-      </p>
-      <br>
-      <p>
-        <strong>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</strong><br>
-        Felix Rönnе
-      </p>
-      <br>
-      <p>
-        <strong>Haftungshinweis</strong><br>
-        Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.
-      </p>
-    </div>
-
-    <div class="footer-bottom">
-      <p>© 2026 Felix Rönnе</p>
-      <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-        <a href="#impressum" style="color: var(--secondary); text-decoration: none; font-size: 13px;">Impressum</a>
-        <a href="datenschutz.html" style="color: var(--secondary); text-decoration: none; font-size: 13px;">Datenschutz</a>
-        <a href="takenote-privacy.html" style="color: var(--secondary); text-decoration: none; font-size: 13px;">Datenschutz TakeNote</a>
-      </div>
-    </div>
-  </div>
+    <footer>
+    <p>© 2026 Felix Rönnе</p>
+    <nav>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="takenote-privacy.html">Datenschutz TakeNote</a>
+    </nav>
+  </footer>
 
 </body>
 </html>
