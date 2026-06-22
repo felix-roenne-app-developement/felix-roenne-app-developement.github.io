@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datenschutzerklärung – TakeNote</title>
+  <style>
+    :root {
+      --bg: #FAF6EE;
+      --card: #F0E9D8;
+      --text: #2B2722;
+      --secondary: #7A7065;
+      --accent: #C9A36A;
+      --border: #E0D5C4;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 48px 20px 80px;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    header {
+      margin-bottom: 48px;
+    }
+
+    .app-label {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .meta {
+      font-size: 14px;
+      color: var(--secondary);
+    }
+
+    section {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-size: 15px;
+      color: var(--secondary);
+      margin-bottom: 10px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      font-size: 15px;
+      color: var(--secondary);
+      padding: 5px 0 5px 20px;
+      position: relative;
+    }
+
+    ul li::before {
+      content: "·";
+      position: absolute;
+      left: 6px;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    .badge {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+    }
+
+    footer {
+      margin-top: 48px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--secondary);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <p class="app-label">TakeNote</p>
+      <h1>Datenschutzerklärung</h1>
+      <p class="meta">Stand: Juni 2026</p>
+    </header>
+
+    <section>
+      <h2>Verantwortlicher</h2>
+      <p>
+        Felix Rönnе<br>
+        E-Mail: <a href="mailto:f.roenne@gmx.de">f.roenne@gmx.de</a>
+      </p>
+    </section>
+
+    <section>
+      <h2>Welche Daten werden verarbeitet?</h2>
+      <p>TakeNote verarbeitet ausschließlich Daten, die du selbst erzeugst:</p>
+      <ul>
+        <li>Audioaufnahmen deiner Übungssessions (.m4a-Dateien)</li>
+        <li>Metadaten zu diesen Aufnahmen (Titel, Komponist, Abschnitt, Dauer, Notizen, Datum)</li>
+      </ul>
+      <p>Es werden keine Nutzungsstatistiken, Gerätekennungen, Standortdaten oder sonstige personenbezogene Daten erhoben.</p>
+    </section>
+
+    <section>
+      <h2>Wo werden die Daten gespeichert?</h2>
+      <p>Alle Daten bleiben ausschließlich auf deinem Gerät. TakeNote verwendet Apple SwiftData für die lokale Datenbank und speichert Audiodateien im Dokumente-Ordner deines iPhones.</p>
+      <p>Eine optionale iCloud-Synchronisierung (über Apple CloudKit) ist technisch vorbereitet, aber aktuell deaktiviert. Sollte sie in einer späteren Version aktiviert werden, erfolgt die Übertragung ausschließlich über dein persönliches iCloud-Konto – der Entwickler hat keinen Zugriff auf diese Daten.</p>
+    </section>
+
+    <section>
+      <div class="badge">Keine Tracker</div>
+      <h2>Weitergabe an Dritte</h2>
+      <p>TakeNote enthält keine Analyse-SDKs, keine Werbebibliotheken und keine Tracking-Frameworks. Es findet keine Datenübertragung an den Entwickler oder sonstige Dritte statt.</p>
+    </section>
+
+    <section>
+      <h2>Mikrofon-Zugriff</h2>
+      <p>TakeNote benötigt Zugriff auf das Mikrofon, um Aufnahmen erstellen zu können. Dieser Zugriff wird ausschließlich während einer aktiven Aufnahme genutzt. Du kannst ihn jederzeit in den iOS-Einstellungen unter <em>Datenschutz &amp; Sicherheit → Mikrofon</em> widerrufen.</p>
+    </section>
+
+    <section>
+      <h2>Deine Rechte</h2>
+      <p>Da alle Daten lokal auf deinem Gerät gespeichert sind, hast du jederzeit vollständige Kontrolle: Einzelne Aufnahmen oder das gesamte Datenarchiv lassen sich direkt in der App löschen. Eine Deinstallation der App entfernt alle gespeicherten Daten vollständig.</p>
+    </section>
+
+    <section>
+      <h2>Kontakt</h2>
+      <p>Bei Fragen zum Datenschutz erreichst du mich unter:<br>
+      <a href="mailto:f.roenne@gmx.de">f.roenne@gmx.de</a></p>
+    </section>
+
+    <footer>
+      <p>© 2026 Felix Rönnе · TakeNote</p>
+    </footer>
+
+  </div>
+</body>
+</html>
