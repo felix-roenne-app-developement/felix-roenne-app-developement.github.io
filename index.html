@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Felix Rönnе – App Development</title>
+  <meta name="description" content="Indie iOS Apps von Felix Rönnе – kleine, fokussierte Apps entwickelt mit Sorgfalt.">
   <style>
     :root {
       --bg: #FAF6EE;
       --card: #F0E9D8;
-      --card-hover: #EAE0C8;
+      --card-hover: #E8DFC8;
       --text: #2B2722;
       --secondary: #7A7065;
       --accent: #C9A36A;
@@ -28,7 +29,7 @@
 
     /* NAV */
     nav {
-      padding: 24px 32px;
+      padding: 22px 40px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -39,121 +40,151 @@
       font-size: 15px;
       font-weight: 600;
       color: var(--text);
-      letter-spacing: -0.01em;
     }
 
-    .nav-brand span {
-      color: var(--accent);
+    .nav-brand span { color: var(--accent); }
+
+    .nav-contact {
+      font-size: 14px;
+      color: var(--secondary);
+      text-decoration: none;
     }
+
+    .nav-contact:hover { color: var(--accent); }
 
     /* HERO */
     .hero {
-      max-width: 720px;
-      margin: 80px auto 64px;
-      padding: 0 24px;
-      text-align: center;
+      padding: 72px 40px 56px;
+      max-width: 860px;
+      margin: 0 auto;
+      width: 100%;
     }
 
-    .hero-eyebrow {
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--accent);
       margin-bottom: 16px;
     }
 
     .hero h1 {
-      font-size: clamp(32px, 5vw, 52px);
+      font-size: clamp(28px, 4.5vw, 48px);
       font-weight: 700;
       font-family: Georgia, "Times New Roman", serif;
-      line-height: 1.15;
+      line-height: 1.2;
       letter-spacing: -0.02em;
       color: var(--text);
-      margin-bottom: 20px;
+      margin-bottom: 16px;
+      max-width: 600px;
     }
 
     .hero p {
-      font-size: 18px;
-      line-height: 1.6;
+      font-size: 17px;
+      line-height: 1.65;
       color: var(--secondary);
-      max-width: 520px;
-      margin: 0 auto;
+      max-width: 480px;
     }
 
-    /* APPS GRID */
+    /* APPS */
     .apps-section {
-      max-width: 720px;
-      margin: 0 auto 80px;
-      padding: 0 24px;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 40px 80px;
       width: 100%;
+      flex: 1;
     }
 
     .section-label {
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--secondary);
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
 
     .app-card {
       background: var(--card);
       border-radius: 20px;
-      padding: 32px;
-      display: flex;
-      align-items: center;
+      padding: 28px;
+      display: grid;
+      grid-template-columns: 72px 1fr;
       gap: 24px;
+      align-items: start;
       text-decoration: none;
       color: inherit;
-      transition: background 0.18s ease, transform 0.18s ease;
-      margin-bottom: 12px;
+      transition: background 0.15s ease, box-shadow 0.15s ease;
+      border: 1px solid transparent;
     }
 
     .app-card:hover {
       background: var(--card-hover);
-      transform: translateY(-2px);
+      box-shadow: 0 4px 24px rgba(43,39,34,0.08);
     }
 
     .app-icon {
-      width: 64px;
-      height: 64px;
-      border-radius: 16px;
+      width: 72px;
+      height: 72px;
+      border-radius: 18px;
       background: #2B2722;
-      flex-shrink: 0;
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 2px 12px rgba(43,39,34,0.25);
     }
 
-    .app-icon svg {
-      width: 36px;
-      height: 36px;
-    }
+    .app-icon svg { width: 40px; height: 40px; }
 
-    .app-info {
-      flex: 1;
+    .app-content { display: flex; flex-direction: column; gap: 6px; }
+
+    .app-top {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      flex-wrap: wrap;
     }
 
     .app-name {
-      font-size: 19px;
+      font-size: 20px;
       font-weight: 700;
-      color: var(--text);
-      margin-bottom: 4px;
       font-family: Georgia, "Times New Roman", serif;
+      color: var(--text);
+    }
+
+    .platform-badge {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      background: var(--accent);
+      color: #fff;
+      padding: 2px 8px;
+      border-radius: 20px;
+    }
+
+    .coming-soon-badge {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--secondary);
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 2px 8px;
+      border-radius: 20px;
     }
 
     .app-desc {
-      font-size: 14px;
+      font-size: 15px;
       color: var(--secondary);
-      line-height: 1.5;
-      margin-bottom: 12px;
+      line-height: 1.55;
     }
 
     .app-links {
       display: flex;
-      gap: 12px;
+      gap: 16px;
+      margin-top: 4px;
       flex-wrap: wrap;
     }
 
@@ -169,60 +200,70 @@
 
     .app-link:hover { text-decoration: underline; }
 
-    .app-link svg {
-      width: 12px;
-      height: 12px;
-      opacity: 0.7;
-    }
-
-    .tag {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      background: var(--accent);
-      color: #fff;
-      padding: 2px 8px;
-      border-radius: 20px;
-    }
-
-    .tag.soon {
-      background: transparent;
-      color: var(--secondary);
-      border: 1px solid var(--border);
-    }
-
-    /* FOOTER */
-    footer {
-      margin-top: auto;
+    /* DIVIDER */
+    .divider {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 40px;
+      border: none;
       border-top: 1px solid var(--border);
-      padding: 28px 32px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
+      width: 100%;
     }
 
-    footer p {
+    /* IMPRESSUM + FOOTER */
+    .footer-area {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 40px 40px 48px;
+      width: 100%;
+    }
+
+    .impressum-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--secondary);
+      margin-bottom: 12px;
+    }
+
+    .impressum-text {
       font-size: 13px;
       color: var(--secondary);
+      line-height: 1.7;
     }
 
-    footer a {
-      font-size: 13px;
+    .impressum-text a {
       color: var(--secondary);
       text-decoration: none;
     }
 
-    footer a:hover { color: var(--accent); }
+    .impressum-text a:hover { color: var(--accent); }
 
-    @media (max-width: 540px) {
-      nav { padding: 20px; }
-      .hero { margin: 48px auto 40px; }
-      .app-card { flex-direction: column; align-items: flex-start; }
-      footer { flex-direction: column; align-items: flex-start; }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-bottom p {
+      font-size: 13px;
+      color: var(--secondary);
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 18px 20px; }
+      .hero { padding: 48px 20px 40px; }
+      .apps-section { padding: 0 20px 60px; }
+      .divider { padding: 0 20px; }
+      .footer-area { padding: 32px 20px 40px; }
+      .app-card { grid-template-columns: 60px 1fr; gap: 16px; padding: 22px; }
+      .app-icon { width: 60px; height: 60px; border-radius: 15px; }
     }
   </style>
 </head>
@@ -230,49 +271,69 @@
 
   <nav>
     <span class="nav-brand">Felix Rönnе <span>Apps</span></span>
+    <a class="nav-contact" href="mailto:f.roenne@gmx.de">f.roenne@gmx.de</a>
   </nav>
 
-  <main>
-    <div class="hero">
-      <p class="hero-eyebrow">Indie App Development</p>
-      <h1>Apps, die den Alltag ein bisschen besser machen.</h1>
-      <p>Kleine, fokussierte Apps für iOS — entwickelt mit Sorgfalt und ohne unnötigen Ballast.</p>
-    </div>
+  <div class="hero">
+    <p class="eyebrow">Indie App Development</p>
+    <h1>Apps, die genau das tun, was sie sollen.</h1>
+    <p>Kleine, fokussierte iOS-Apps — entwickelt mit Sorgfalt, ohne unnötigen Ballast.</p>
+  </div>
 
-    <div class="apps-section">
-      <p class="section-label">Apps</p>
+  <div class="apps-section">
+    <p class="section-label">Apps</p>
 
-      <div class="app-card">
-        <div class="app-icon">
-          <!-- Note icon -->
-          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="20" y="5" width="5" height="21" rx="2.5" fill="#F5EFE2"/>
-            <ellipse cx="14" cy="24" rx="8" ry="6.5" fill="#F5EFE2"/>
-            <circle cx="28" cy="8" r="4.5" fill="#C9A36A"/>
-          </svg>
+    <div class="app-card">
+      <div class="app-icon">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="23" y="5" width="5.5" height="23" rx="2.75" fill="#F5EFE2"/>
+          <ellipse cx="15" cy="27" rx="9" ry="7" fill="#F5EFE2"/>
+          <circle cx="32" cy="8.5" r="5" fill="#C9A36A"/>
+        </svg>
+      </div>
+      <div class="app-content">
+        <div class="app-top">
+          <span class="app-name">TakeNote</span>
+          <span class="platform-badge">iOS</span>
+          <span class="coming-soon-badge">Demnächst im App Store</span>
         </div>
-        <div class="app-info">
-          <p class="app-name">TakeNote</p>
-          <p class="app-desc">Aufnahmen für Klavierspieler — Takes aufnehmen, nach Abschnitten sortieren und den Fortschritt verfolgen.</p>
-          <div class="app-links">
-            <span class="tag">iOS</span>
-            <a class="app-link" href="takenote-privacy.html">
-              Datenschutzerklärung
-              <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          </div>
+        <p class="app-desc">Aufnahmen für Klavierspieler — Takes aufnehmen, nach Abschnitten sortieren und den Fortschritt hörbar verfolgen.</p>
+        <div class="app-links">
+          <a class="app-link" href="takenote-privacy.html">
+            Datenschutzerklärung →
+          </a>
         </div>
       </div>
-
     </div>
-  </main>
+  </div>
 
-  <footer>
-    <p>© 2026 Felix Rönnе</p>
-    <a href="mailto:f.roenne@gmx.de">f.roenne@gmx.de</a>
-  </footer>
+  <hr class="divider">
+
+  <div class="footer-area">
+    <p class="impressum-title">Impressum</p>
+    <div class="impressum-text">
+      <p>
+        <strong>Angaben gemäß § 5 TMG</strong><br>
+        Felix Rönnе<br>
+        E-Mail: <a href="mailto:f.roenne@gmx.de">f.roenne@gmx.de</a>
+      </p>
+      <br>
+      <p>
+        <strong>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</strong><br>
+        Felix Rönnе
+      </p>
+      <br>
+      <p>
+        <strong>Haftungshinweis</strong><br>
+        Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.
+      </p>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Felix Rönnе</p>
+      <p><a href="takenote-privacy.html" style="color: var(--secondary); text-decoration: none;">Datenschutzerklärung TakeNote</a></p>
+    </div>
+  </div>
 
 </body>
 </html>
